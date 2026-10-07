@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Birthday Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;900&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            min-height: 100dvh;
+            flex-direction: column;
+            background: radial-gradient(circle at center, #1b0722 0%, #0d0213 70%, #050109 100%);
+            color: #fff;
+            padding: clamp(16px, 4vw, 40px);
+            text-align: center;
+        }
+
+        .heading-card {
+            background: rgba(26, 9, 32, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 51, 102, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 51, 102, 0.2);
+            border-radius: clamp(20px, 4vw, 32px);
+            padding: clamp(24px, 5vw, 60px);
+            max-width: 720px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: cardEntrance 0.8s cubic-bezier(0.2, 0.9, 0.3, 1);
+        }
+
+        @keyframes cardEntrance {
+            from { opacity: 0; transform: scale(0.9) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .sign {
+            font-size: clamp(5rem, 16vw, 10rem);
+            line-height: 1;
+            margin-bottom: clamp(12px, 3vw, 24px);
+            filter: drop-shadow(0 0 25px rgba(255, 51, 102, 0.5));
+            animation: floatSign 3s infinite ease-in-out alternate;
+        }
+
+        @keyframes floatSign {
+            0% { transform: translateY(0) rotate(-4deg); }
+            100% { transform: translateY(-10px) rotate(4deg); }
+        }
+
+        .main {
+            font-size: clamp(2.5rem, 9vw, 5.5rem);
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, #ff3366 0%, #ff6b6b 50%, #ffd700 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px rgba(255, 51, 102, 0.6));
+            margin-bottom: clamp(16px, 3vw, 24px);
+            line-height: 1.1;
+        }
+
+        .text {
+            font-size: clamp(1rem, 3.2vw, 1.45rem);
+            line-height: 1.6;
+            color: #d1b8dc;
+            font-weight: 600;
+            max-width: 580px;
+            margin-bottom: clamp(20px, 4vw, 36px);
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 32px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
+            color: #150505;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            box-shadow: 0 10px 25px rgba(255, 170, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 15px 35px rgba(255, 170, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="heading-card">
+        <div class="sign">🖕</div>
+        <div class="main">Fuck You</div>
+        <div class="text">Too fir se aa gya dekhne teri ma ki chut Bhosdike, Gandu</div>
+        <a href="index.html" class="back-btn">
+            <span>✨</span>
+            <span>Real Birthday Page Par Jao</span>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,2042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Happy Birthday My Queen — Charu ❤️</title>
+    <meta name="description" content="An intimate, heartfelt, and magical birthday celebration dedicated to Charu.">
+
+    <!-- Google Fonts for Editorial Romance & Sensual Luxury -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- GSAP for Smooth Cinematic Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <style>
+        :root {
+            --bg-dark: #07030c;
+            --bg-wine: #1c0618;
+            --bg-noir: #0e0514;
+            --gold-primary: #ffd700;
+            --gold-warm: #ffb833;
+            --rose-crimson: #ff3366;
+            --rose-deep: #b3103f;
+            --candle-amber: #ff9d00;
+            --text-pure: #ffffff;
+            --text-dim: #e4d4e8;
+            --glass-bg: rgba(22, 9, 28, 0.72);
+            --glass-border: rgba(255, 215, 0, 0.22);
+            --glass-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 30px rgba(255, 51, 102, 0.15);
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-script: 'Great Vibes', cursive;
+            --font-elegant: 'Cormorant Garamond', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100%;
+            overflow-x: hidden;
+            background-color: var(--bg-dark);
+            color: var(--text-pure);
+            font-family: var(--font-sans);
+            scroll-behavior: smooth;
+        }
+
+        /* Ambient Candlelight Overlay on Entire Viewport */
+        #candlelight-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 8;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 170, 51, 0.16) 0%, rgba(255, 100, 30, 0.08) 45%, transparent 75%);
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            mix-blend-mode: screen;
+        }
+
+        #candlelight-overlay.burning {
+            opacity: 1;
+            animation: ambientFlicker 3s infinite alternate ease-in-out;
+        }
+
+        @keyframes ambientFlicker {
+            0%, 100% { opacity: 0.85; transform: scale(1); }
+            35% { opacity: 1; transform: scale(1.02); }
+            70% { opacity: 0.75; transform: scale(0.98); }
+        }
+
+        /* Realistic Falling Petals & Embers Canvas */
+        #petals-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 4;
+        }
+
+        /* Screen Wrapper */
+        .screen {
+            min-height: 100vh;
+            min-height: 100dvh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: clamp(16px, 4vw, 40px);
+            overflow: hidden;
+        }
+
+        /* ==========================================================================
+           INTRO SCREEN — Mysterious, Seductive, Intimate Candlelit Prelude
+           ========================================================================== */
+        #intro-screen {
+            background: radial-gradient(circle at center, #1b0722 0%, #0c0312 60%, #050108 100%);
+            z-index: 20;
+        }
+
+        #intro-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('charu4.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            filter: blur(2px) brightness(0.65) saturate(1.2);
+            transition: opacity 2.5s cubic-bezier(0.25, 1, 0.5, 1), transform 12s ease-out;
+            transform: scale(1.08);
+            z-index: 1;
+        }
+
+        #intro-bg.reveal {
+            opacity: 0.28;
+            transform: scale(1);
+        }
+
+        .intro-vignette {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 30%, rgba(5, 1, 8, 0.85) 75%, rgba(5, 1, 8, 0.98) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .intro-content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 650px;
+            width: 100%;
+        }
+
+        .intro-whisper {
+            font-family: var(--font-script);
+            font-size: clamp(2.2rem, 6vw, 4.2rem);
+            color: var(--gold-primary);
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.7), 0 0 35px rgba(255, 100, 30, 0.4);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .intro-subtitle {
+            font-family: var(--font-elegant);
+            font-size: clamp(1.05rem, 2.5vw, 1.4rem);
+            font-style: italic;
+            color: var(--text-dim);
+            letter-spacing: 2px;
+            margin-bottom: 35px;
+            opacity: 0;
+            transform: translateY(20px);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Fairy Lights Hanging Strands */
+        .fairy-lights-curtain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 140px;
+            display: flex;
+            justify-content: space-around;
+            pointer-events: none;
+            z-index: 5;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+        }
+
+        .fairy-strand {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .fairy-wire {
+            width: 1px;
+            height: 40px;
+            background: rgba(255, 215, 0, 0.35);
+        }
+
+        .fairy-bulb {
+            width: 14px;
+            height: 20px;
+            border-radius: 50% 50% 45% 45%;
+            background: #fff;
+            box-shadow: 0 0 15px var(--gold-primary), 0 0 30px var(--gold-warm);
+            animation: bulbTwinkle 2.5s infinite alternate ease-in-out;
+        }
+
+        @keyframes bulbTwinkle {
+            0%, 100% { opacity: 0.6; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.15); filter: drop-shadow(0 0 10px #ff3366); }
+        }
+
+        /* Floating orbs for intro */
+        .ambient-orb {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            filter: blur(40px);
+            opacity: 0.35;
+            animation: floatOrb 12s infinite alternate ease-in-out;
+        }
+
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(40px, -30px) scale(1.2); }
+        }
+
+        /* ==========================================================================
+           CELEBRATION SCREEN — Haute Couture Velvet & Candlelight Ballroom
+           ========================================================================== */
+        #celebration-screen {
+            display: none;
+            background: radial-gradient(circle at 50% 20%, #26081e 0%, #15051c 45%, #08020d 90%);
+            position: relative;
+            padding-top: clamp(60px, 8vw, 90px);
+            padding-bottom: clamp(40px, 6vw, 70px);
+        }
+
+        #celebration-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('charu1.jpg');
+            background-size: cover;
+            background-position: center 30%;
+            opacity: 0.12;
+            filter: blur(6px) brightness(0.7) contrast(1.1);
+            pointer-events: none;
+            z-index: 1;
+            transition: opacity 2s ease;
+        }
+
+        /* Modern Floating Audio Pill */
+        .audio-pill {
+            position: fixed;
+            top: clamp(14px, 2.5vw, 24px);
+            right: clamp(14px, 2.5vw, 24px);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            border-radius: 50px;
+            background: rgba(20, 8, 28, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 215, 0, 0.28);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 215, 0, 0.15);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .audio-pill:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 215, 0, 0.6);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 51, 102, 0.35);
+        }
+
+        .music-equalizer {
+            display: flex;
+            align-items: flex-end;
+            gap: 2.5px;
+            height: 14px;
+        }
+
+        .music-bar {
+            width: 3px;
+            height: 100%;
+            background: var(--gold-primary);
+            border-radius: 3px;
+            transform-origin: bottom;
+            animation: eqDance 1.2s infinite ease-in-out alternate;
+        }
+
+        .music-bar:nth-child(2) { animation-delay: 0.2s; height: 75%; background: var(--rose-crimson); }
+        .music-bar:nth-child(3) { animation-delay: 0.4s; height: 90%; background: var(--gold-warm); }
+        .music-bar:nth-child(4) { animation-delay: 0.1s; height: 60%; background: #ff758c; }
+
+        .audio-pill.paused .music-bar {
+            animation-play-state: paused;
+            transform: scaleY(0.25);
+        }
+
+        .audio-pill-text {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-dim);
+            letter-spacing: 0.5px;
+        }
+
+        /* Top Action Buttons (Replay, Gallery) */
+        .top-action-bar {
+            position: fixed;
+            top: clamp(14px, 2.5vw, 24px);
+            left: clamp(14px, 2.5vw, 24px);
+            z-index: 100;
+            display: flex;
+            gap: 10px;
+        }
+
+        .icon-pill-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            border-radius: 50px;
+            background: rgba(20, 8, 28, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .icon-pill-btn:hover {
+            color: #fff;
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Container Layout - Fully Fluid & Responsive */
+        .container {
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(280px, 420px) minmax(320px, 1fr);
+            gap: clamp(28px, 5vw, 55px);
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* ==========================================================================
+           CHARU'S PORTRAIT — Sensual Golden Frame with Candlelight Reflection
+           ========================================================================== */
+        .portrait-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            perspective: 1200px;
+            width: 100%;
+        }
+
+        .portrait-card {
+            position: relative;
+            width: 100%;
+            max-width: clamp(260px, 34vw, 380px);
+            border-radius: 28px;
+            padding: 10px;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.35) 0%, rgba(255, 51, 102, 0.2) 50%, rgba(255, 170, 51, 0.4) 100%);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 35px rgba(255, 215, 0, 0.25), 0 0 60px rgba(255, 51, 102, 0.18);
+            transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1), box-shadow 0.6s ease;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        .portrait-card:hover {
+            transform: translateY(-6px) rotateY(4deg) rotateX(2deg);
+            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.95), 0 0 50px rgba(255, 215, 0, 0.4), 0 0 80px rgba(255, 51, 102, 0.35);
+        }
+
+        .portrait-frame-inner {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 3 / 4;
+            background-color: #0b0310;
+        }
+
+        .charu-main-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+            display: block;
+            border-radius: 20px;
+            filter: contrast(1.05) saturate(1.08) brightness(0.96);
+            transition: transform 0.8s ease, filter 0.8s ease;
+        }
+
+        .portrait-card:hover .charu-main-img {
+            transform: scale(1.04);
+            filter: contrast(1.08) saturate(1.15) brightness(1.02);
+        }
+
+        /* Candlelight Reflection on Her Face */
+        .portrait-candle-glow {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 60% 80%, rgba(255, 160, 40, 0.38) 0%, rgba(255, 60, 20, 0.15) 45%, transparent 70%);
+            pointer-events: none;
+            opacity: 0;
+            mix-blend-mode: soft-light;
+            transition: opacity 1.2s ease;
+        }
+
+        .portrait-candle-glow.active {
+            opacity: 1;
+            animation: portraitCandleFlicker 2.8s infinite alternate ease-in-out;
+        }
+
+        @keyframes portraitCandleFlicker {
+            0%, 100% { opacity: 0.8; }
+            40% { opacity: 1; }
+            75% { opacity: 0.65; }
+        }
+
+        /* Queen Crown Floating Badge */
+        .crown-badge {
+            position: absolute;
+            top: -24px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: clamp(55px, 9vw, 75px);
+            filter: drop-shadow(0 6px 15px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 18px rgba(255, 215, 0, 0.8));
+            animation: crownFloat 3s infinite ease-in-out alternate;
+            z-index: 15;
+            pointer-events: none;
+        }
+
+        @keyframes crownFloat {
+            0% { transform: translateX(-50%) translateY(0) rotate(-3deg); }
+            100% { transform: translateX(-50%) translateY(-8px) rotate(3deg); }
+        }
+
+        /* Portrait Footer Pill */
+        .portrait-tag {
+            margin-top: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 18px;
+            border-radius: 50px;
+            background: rgba(22, 9, 28, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            font-family: var(--font-elegant);
+            font-size: clamp(0.95rem, 2vw, 1.15rem);
+            color: var(--gold-primary);
+            letter-spacing: 1px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* ==========================================================================
+           MAIN STAGE (Cake, Candle, Controls, Heading)
+           ========================================================================== */
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            position: relative;
+            z-index: 5;
+        }
+
+        /* Seductive Celebration Title */
+        #birthday-heading {
+            display: none;
+            font-family: var(--font-serif);
+            font-size: clamp(1.85rem, 4.2vw, 3.4rem);
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: clamp(16px, 3vw, 28px);
+            background: linear-gradient(135deg, #ffffff 0%, #ffd700 40%, #ff85a2 70%, #ffc04d 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 25px rgba(255, 215, 0, 0.5), 0 0 50px rgba(255, 51, 102, 0.3);
+            filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.8));
+            letter-spacing: 0.5px;
+            animation: titlePulse 2.8s infinite alternate ease-in-out;
+        }
+
+        @keyframes titlePulse {
+            0% { filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 15px rgba(255, 215, 0, 0.4)); }
+            100% { filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 30px rgba(255, 51, 102, 0.6)); }
+        }
+
+        /* Cake Stage & Stand */
+        .cake-stage {
+            position: relative;
+            width: 100%;
+            max-width: 380px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: clamp(10px, 2.5vw, 24px) 0;
+        }
+
+        .cake-container {
+            position: relative;
+            width: clamp(230px, 32vw, 320px);
+            height: clamp(200px, 28vw, 270px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 800px;
+        }
+
+        /* Pedestal / Reflection under Cake */
+        .cake-pedestal {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 82%;
+            height: 18px;
+            border-radius: 50%;
+            background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.5) 0%, rgba(255, 100, 30, 0.25) 40%, transparent 75%);
+            filter: blur(6px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .custom-cake {
+            width: 100%;
+            height: 100%;
+            background-image: url('cake3.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.65)) drop-shadow(0 0 25px rgba(255, 170, 51, 0.35));
+            transition: all 0.8s cubic-bezier(0.2, 0.9, 0.3, 1);
+        }
+
+        /* Cake piece after slice */
+        .cake-piece {
+            width: 100%;
+            height: 100%;
+            background-image: url('piece.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            display: none;
+            z-index: 3;
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 35px rgba(255, 215, 0, 0.6));
+        }
+
+        /* Golden Knife Slicing Animation Overlay */
+        .knife-slash {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            width: 4px;
+            height: 140px;
+            background: linear-gradient(to bottom, #ffffff, #ffd700, #ff8c00);
+            box-shadow: 0 0 25px #ffd700, 0 0 45px #ff3366;
+            border-radius: 4px;
+            opacity: 0;
+            transform: translateX(-50%) rotate(25deg) scaleY(0);
+            transform-origin: top center;
+            z-index: 20;
+            pointer-events: none;
+        }
+
+        /* ==========================================================================
+           REALISTIC MULTI-LAYER CANDLE & FLAME PHYSICS
+           ========================================================================== */
+        .candle {
+            position: absolute;
+            top: clamp(8px, 3.5%, 20px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 14px;
+            height: 38px;
+            display: none;
+            z-index: 10;
+        }
+
+        /* Wax Body */
+        .candle-wax {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px 5px 2px 2px;
+            background: linear-gradient(to right, #eed0af 0%, #fff6e8 45%, #e0b488 100%);
+            box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.8), 0 3px 6px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        /* Candle Wick */
+        .candle-wick {
+            position: absolute;
+            top: -9px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2.5px;
+            height: 10px;
+            background: #2b1810;
+            border-radius: 2px;
+        }
+
+        /* Multi-Layered Realistic Flame */
+        .flame-container {
+            position: absolute;
+            top: -36px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 38px;
+            opacity: 0;
+            transform-origin: center bottom;
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            pointer-events: none;
+        }
+
+        .flame-container.lit {
+            opacity: 1;
+            animation: realisticFlameWaver 1.2s infinite ease-in-out alternate;
+        }
+
+        /* Outer Orange / Red Fire Halo */
+        .flame-outer {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 36px;
+            border-radius: 50% 50% 35% 35% / 60% 60% 40% 40%;
+            background: radial-gradient(ellipse at 50% 80%, #ff8c00 0%, #ff3b00 65%, rgba(255, 50, 0, 0) 100%);
+            filter: drop-shadow(0 0 12px #ff6a00) drop-shadow(0 0 28px rgba(255, 140, 0, 0.7));
+        }
+
+        /* Inner Intense Yellow Core */
+        .flame-inner {
+            position: absolute;
+            bottom: 3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 11px;
+            height: 24px;
+            border-radius: 50% 50% 35% 35% / 60% 60% 40% 40%;
+            background: radial-gradient(ellipse at 50% 80%, #ffffff 0%, #fff7a3 40%, #ffd700 85%);
+            filter: blur(0.5px);
+        }
+
+        /* Blue Base Core (Natural gas/oxygen combustion layer) */
+        .flame-blue-core {
+            position: absolute;
+            bottom: 1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 8px;
+            height: 9px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #00f0ff 0%, #0051ff 80%, transparent 100%);
+            opacity: 0.85;
+        }
+
+        /* Radiant Flame Glow Aura */
+        .flame-aura {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 170, 51, 0.45) 0%, rgba(255, 90, 20, 0.18) 45%, transparent 75%);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .flame-container.lit .flame-aura {
+            opacity: 1;
+            animation: flameAuraPulse 2s infinite alternate ease-in-out;
+        }
+
+        @keyframes realisticFlameWaver {
+            0% {
+                transform: translateX(-50%) rotate(-1.5deg) scale(0.98, 1);
+                filter: brightness(1);
+            }
+            25% {
+                transform: translateX(-49%) rotate(2.5deg) scale(1.03, 1.05);
+                filter: brightness(1.15);
+            }
+            50% {
+                transform: translateX(-51%) rotate(-2deg) scale(0.96, 0.94);
+                filter: brightness(1.05);
+            }
+            75% {
+                transform: translateX(-50%) rotate(1.8deg) scale(1.02, 1.08);
+                filter: brightness(1.2);
+            }
+            100% {
+                transform: translateX(-49.5%) rotate(-0.5deg) scale(1, 1);
+                filter: brightness(1.1);
+            }
+        }
+
+        @keyframes flameAuraPulse {
+            0% { transform: translateX(-50%) scale(0.92); opacity: 0.7; }
+            100% { transform: translateX(-50%) scale(1.12); opacity: 1; }
+        }
+
+        /* Realistic Multi-Wisped Smoke Particle Drift */
+        .smoke-container {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 60px;
+            pointer-events: none;
+            opacity: 0;
+        }
+
+        .smoke-particle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(220, 220, 230, 0.6) 0%, rgba(180, 180, 190, 0.2) 60%, transparent 80%);
+            filter: blur(4px);
+        }
+
+        /* ==========================================================================
+           LUXURY ACTION BUTTONS
+           ========================================================================== */
+        .btn-action-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin-top: clamp(14px, 3vw, 24px);
+            z-index: 10;
+        }
+
+        .btn {
+            position: relative;
+            padding: clamp(12px, 2.5vw, 16px) clamp(28px, 6vw, 44px);
+            font-family: var(--font-sans);
+            font-size: clamp(0.95rem, 2vw, 1.15rem);
+            font-weight: 600;
+            color: #ffffff;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            overflow: hidden;
+            letter-spacing: 0.8px;
+            text-transform: capitalize;
+            background: linear-gradient(135deg, #ff3366 0%, #ff6b6b 50%, #ff8e53 100%);
+            box-shadow: 0 10px 30px rgba(255, 51, 102, 0.4), 0 0 20px rgba(255, 142, 83, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+            transition: all 0.35s cubic-bezier(0.2, 0.9, 0.3, 1);
+            user-select: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            touch-action: manipulation;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #ffd700 0%, #ffaa00 50%, #ff6a00 100%);
+            color: #1a0808;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(255, 170, 0, 0.45), 0 0 25px rgba(255, 215, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(255, 51, 102, 0.6), 0 0 30px rgba(255, 142, 83, 0.45);
+        }
+
+        .btn-gold:hover {
+            box-shadow: 0 15px 40px rgba(255, 170, 0, 0.65), 0 0 35px rgba(255, 215, 0, 0.5);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:active {
+            transform: translateY(1px) scale(0.97);
+        }
+
+        /* ==========================================================================
+           LOVE LETTERS — Royal Frosted Parchment with Gold Wax Seal
+           ========================================================================== */
+        #message-container {
+            display: none;
+            width: 100%;
+            max-width: 680px;
+            margin: clamp(24px, 4vw, 40px) auto 0;
+            padding: clamp(20px, 4vw, 36px);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 28px;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        /* Ambient Glow Border Shimmer */
+        #message-container::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.4), transparent 40%, rgba(255, 51, 102, 0.35) 80%, rgba(255, 184, 51, 0.5));
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Royal Wax Seal Header */
+        .wax-seal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 22px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .wax-seal {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-elegant);
+            font-size: clamp(1.1rem, 2.4vw, 1.35rem);
+            font-weight: 700;
+            color: var(--gold-primary);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .wax-seal-stamp {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #b3103f 0%, #700624 100%);
+            border: 2px solid var(--gold-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 51, 102, 0.4);
+            font-size: 1rem;
+        }
+
+        .letter-counter {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 1px;
+            font-family: var(--font-sans);
+        }
+
+        /* Message Items */
+        .message-part {
+            position: relative;
+            padding: 16px 18px;
+            margin-bottom: 16px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            font-family: var(--font-serif);
+            font-size: clamp(1rem, 2.2vw, 1.25rem);
+            font-style: italic;
+            line-height: 1.7;
+            color: var(--text-dim);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.2, 0.9, 0.3, 1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .message-part.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .message-part:last-child {
+            margin-bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 51, 102, 0.12) 0%, rgba(255, 215, 0, 0.1) 100%);
+            border-color: rgba(255, 215, 0, 0.3);
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .message-part-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-style: normal;
+            font-weight: 700;
+            color: var(--gold-primary);
+            letter-spacing: 0.5px;
+        }
+
+        .message-icon {
+            width: 22px;
+            height: 22px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 6px rgba(255, 215, 0, 0.6));
+        }
+
+        /* Interactive Fireworks Canvas */
+        #fireworks-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 12;
+            display: none;
+        }
+
+        /* Celebration Floating Elements (Balloons & Hearts) */
+        .celebration-element {
+            position: absolute;
+            pointer-events: none;
+            z-index: 6;
+            animation: floatUpAnimation linear infinite;
+        }
+
+        @keyframes floatUpAnimation {
+            0% {
+                transform: translateY(105vh) rotate(0deg) scale(0.9);
+                opacity: 0.85;
+            }
+            100% {
+                transform: translateY(-20vh) rotate(360deg) scale(1.05);
+                opacity: 0;
+            }
+        }
+
+        /* ==========================================================================
+           CHARU'S MEMORY MODAL / GALLERY CAROUSEL
+           ========================================================================== */
+        #gallery-modal {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(8, 2, 12, 0.88);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        #gallery-modal.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            position: relative;
+            width: 100%;
+            max-width: 580px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            padding: clamp(20px, 4vw, 32px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(255, 51, 102, 0.25);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1);
+        }
+
+        #gallery-modal.open .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 16px;
+            right: 18px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .modal-close-btn:hover {
+            background: var(--rose-crimson);
+            transform: rotate(90deg);
+        }
+
+        .modal-img-container {
+            width: 100%;
+            max-width: 380px;
+            aspect-ratio: 3 / 4;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 15px 0;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 215, 0, 0.3);
+            border: 2px solid rgba(255, 215, 0, 0.35);
+        }
+
+        .modal-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .modal-caption {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: clamp(1rem, 2.2vw, 1.2rem);
+            color: var(--gold-primary);
+            line-height: 1.5;
+            margin-bottom: 20px;
+            min-height: 48px;
+        }
+
+        .gallery-nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            color: #fff;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            background: var(--gold-primary);
+            color: #1a0808;
+            transform: scale(1.1);
+        }
+
+        /* ==========================================================================
+           RESPONSIVE DESIGN BREAKPOINTS
+           ========================================================================== */
+        @media (max-width: 980px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 36px;
+                max-width: 580px;
+            }
+
+            .portrait-wrapper {
+                margin: 0 auto;
+            }
+
+            .portrait-card {
+                max-width: 290px;
+            }
+
+            #celebration-screen {
+                padding-top: 75px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .screen {
+                padding: 16px 12px;
+            }
+
+            .portrait-card {
+                max-width: 250px;
+                padding: 8px;
+                border-radius: 22px;
+            }
+
+            .cake-container {
+                width: 240px;
+                height: 190px;
+            }
+
+            .btn {
+                padding: 12px 26px;
+                font-size: 0.95rem;
+                width: 100%;
+                max-width: 280px;
+            }
+
+            .btn-action-group {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            #message-container {
+                padding: 18px 14px;
+                border-radius: 20px;
+            }
+
+            .top-action-bar {
+                left: 12px;
+                top: 12px;
+            }
+
+            .audio-pill {
+                right: 12px;
+                top: 12px;
+                padding: 6px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ambient Candlelight Lighting Layer -->
+    <div id="candlelight-overlay"></div>
+
+    <!-- Canvas for Floating Velvet Petals & Star Embers -->
+    <canvas id="petals-canvas"></canvas>
+
+    <!-- Top Left Action Bar (Memories & Sound Control) -->
+    <div class="top-action-bar">
+        <button id="open-gallery-btn" class="icon-pill-btn" title="View Charu's Moments">
+            <span>✨</span>
+            <span>Memories</span>
+        </button>
+    </div>
+
+    <!-- Floating Audio Equalizer Widget -->
+    <div id="audio-pill" class="audio-pill paused" title="Toggle Music">
+        <div class="music-equalizer">
+            <div class="music-bar"></div>
+            <div class="music-bar"></div>
+            <div class="music-bar"></div>
+            <div class="music-bar"></div>
+        </div>
+        <span id="audio-track-label" class="audio-pill-text">Music Off</span>
+    </div>
+
+    <!-- ==========================================================================
+         INTRO SCREEN — Seductive Candlelit Prelude
+         ========================================================================== -->
+    <div id="intro-screen" class="screen">
+        <div id="intro-bg"></div>
+        <div class="intro-vignette"></div>
+
+        <!-- Hanging Fairy Lights Curtain -->
+        <div class="fairy-lights-curtain" id="fairy-curtain"></div>
+
+        <!-- Ambient Glow Orbs -->
+        <div class="ambient-orb" style="top: 15%; left: 20%; width: 220px; height: 220px; background: #ff3366;"></div>
+        <div class="ambient-orb" style="bottom: 20%; right: 15%; width: 280px; height: 280px; background: #ffd700; animation-delay: -3s;"></div>
+
+        <div class="intro-content">
+            <h1 class="intro-whisper" id="intro-title">Wait...</h1>
+            <p class="intro-subtitle" id="intro-sub">A special universe crafted just for you, Charu</p>
+            
+            <div class="btn-action-group">
+                <button id="lights-btn" class="btn btn-gold">
+                    <span>✨</span>
+                    <span>Turn On The Lights</span>
+                </button>
+                <button id="music-btn" class="btn" style="display: none;">
+                    <span>🎵</span>
+                    <span>Play Romantic Music</span>
+                </button>
+                <button id="start-btn" class="btn btn-gold" style="display: none;">
+                    <span>❤️</span>
+                    <span>Let's Get Started</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================================================
+         MAIN CELEBRATION SCREEN — Romantic Candlelit Birthday Sanctuary
+         ========================================================================== -->
+    <div id="celebration-screen" class="screen">
+        <div id="celebration-bg"></div>
+
+        <div class="container">
+            <!-- Left Column: Charu's Seductive Framed Portrait -->
+            <div class="portrait-wrapper">
+                <div class="portrait-card" id="portrait-card">
+                    <img src="crown.png" alt="Crown" class="crown-badge">
+                    <div class="portrait-frame-inner">
+                        <img src="charu5.jpg" alt="Charu" class="charu-main-img" id="main-portrait-img">
+                        <div class="portrait-candle-glow" id="portrait-candle-glow"></div>
+                    </div>
+                </div>
+                <div class="portrait-tag">
+                    <span>👑</span>
+                    <span>My Heroin "Saruu"</span>
+                </div>
+            </div>
+
+            <!-- Right Column: Seductive Cake, Candle, Climax & Heartfelt Message -->
+            <div class="content">
+                <!-- Birthday Climax Heading -->
+                <h1 id="birthday-heading">Happy Birthday my Heroin "Saruu" ❤️</h1>
+
+                <!-- Cake Stage with Stand & Candle -->
+                <div class="cake-stage">
+                    <div class="cake-container">
+                        <!-- Golden Knife Slash Animation Layer -->
+                        <div class="knife-slash" id="knife-slash"></div>
+
+                        <!-- Original Cake -->
+                        <div class="custom-cake" id="original-cake">
+                            <!-- Realistic Multi-Layer Candle -->
+                            <div class="candle" id="candle">
+                                <div class="candle-wick"></div>
+                                <div class="candle-wax"></div>
+                                
+                                <!-- Realistic Candle Flame -->
+                                <div class="flame-container" id="flame-container">
+                                    <div class="flame-outer"></div>
+                                    <div class="flame-inner"></div>
+                                    <div class="flame-blue-core"></div>
+                                    <div class="flame-aura"></div>
+                                </div>
+
+                                <!-- Dynamic Smoke Stream on Extinguish -->
+                                <div class="smoke-container" id="smoke-container"></div>
+                            </div>
+                        </div>
+
+                        <!-- Cut Cake Piece -->
+                        <div class="cake-piece" id="cake-piece"></div>
+
+                        <!-- Subtle Pedestal Shadow -->
+                        <div class="cake-pedestal"></div>
+                    </div>
+
+                    <!-- Interactive Action Buttons -->
+                    <div class="btn-action-group">
+                        <button id="burn-candle-btn" class="btn btn-gold">
+                            <span>🕯️</span>
+                            <span>Light The Candle</span>
+                        </button>
+                        <button id="cut-cake-btn" class="btn" style="display: none;">
+                            <span>🔪</span>
+                            <span>Make A Wish & Cut Cake</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Romantic Love Letters (Preserving 100% of the User's Real Emotion) -->
+                <div id="message-container">
+                    <div class="wax-seal-header">
+                        <div class="wax-seal">
+                            <div class="wax-seal-stamp">❤️</div>
+                            <span>A Letter To You</span>
+                        </div>
+                        <span class="letter-counter">Forever & Always</span>
+                    </div>
+
+                    <div class="message-part" id="message-part-1">
+                        <div class="message-part-header">
+                            <img src="heart.png" class="message-icon" alt="❤">
+                            <span>You Make Life Beautiful</span>
+                        </div>
+                        "Charu, you are the most beautiful part of my life. Even when you’re not around, your presence somehow finds a way to make everything feel alive and beautiful."
+                    </div>
+
+                    <div class="message-part" id="message-part-2">
+                        <div class="message-part-header">
+                            <img src="star.png" class="message-icon" alt="⭐">
+                            <span>The Day Everything Changed</span>
+                        </div>
+                        "Today is your day — and somehow it feels special for me too, because this is the day the most precious part of my world came into it."
+                    </div>
+
+                    <div class="message-part" id="message-part-3">
+                        <div class="message-part-header">
+                            <img src="smile.png" class="message-icon" alt="😊">
+                            <span>Your Magical Calm</span>
+                        </div>
+                        "Your smile has a calm I can’t explain, and your words carry a warmth that reaches me even from miles away. You might not know it, but you’ve become a quiet rhythm in my thoughts — a peace I look for without realizing."
+                    </div>
+
+                    <div class="message-part" id="message-part-4">
+                        <div class="message-part-header">
+                            <img src="gift.png" class="message-icon" alt="🎁">
+                            <span>My Deepest Wish</span>
+                        </div>
+                        "I just want your life to overflow with happiness. May you keep smiling, may the world give you everything you truly deserve — and maybe someday, I’ll be there to see it all happen beside you."
+                    </div>
+
+                    <div class="message-part" id="message-part-5">
+                        <div class="message-part-header">
+                            <img src="crown.png" class="message-icon" alt="👑">
+                            <span>Forever My Queen</span>
+                        </div>
+                        "Happy Birthday, my ...... ❤️ You’re not just a part of my story — you’re the chapter I keep going back to. My peace, my chaos, my Queen.❤️"
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Realistic Fireworks Canvas -->
+    <canvas id="fireworks-canvas"></canvas>
+
+    <!-- Memories Modal (Featuring All 7 Charu Photos with Seductive Captions) -->
+    <div id="gallery-modal">
+        <div class="modal-content">
+            <button class="modal-close-btn" id="modal-close-btn" title="Close">✕</button>
+            <div class="wax-seal" style="margin-bottom: 5px;">
+                <span>✨ Charu's Memories ✨</span>
+            </div>
+            <div class="modal-img-container">
+                <img src="charu1.jpg" alt="Charu memory" class="modal-img" id="modal-img">
+            </div>
+            <p class="modal-caption" id="modal-caption">That radiant smile that lights up my darkest days.</p>
+            <div class="gallery-nav">
+                <button class="nav-btn" id="prev-img-btn">‹</button>
+                <span id="gallery-counter" style="color: var(--text-dim); font-size: 0.9rem;">1 / 7</span>
+                <button class="nav-btn" id="next-img-btn">›</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="background-music" loop preload="auto">
+        <source src="music1.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="birthday-music" loop preload="auto">
+        <source src="audio2.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- ==========================================================================
+         JAVASCRIPT LOGIC — Interactive, Realistic Physics & Responsive Orchestration
+         ========================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Elements
+            const introScreen = document.getElementById('intro-screen');
+            const celebrationScreen = document.getElementById('celebration-screen');
+            const introBg = document.getElementById('intro-bg');
+            const introTitle = document.getElementById('intro-title');
+            const introSub = document.getElementById('intro-sub');
+            const fairyCurtain = document.getElementById('fairy-curtain');
+            const candlelightOverlay = document.getElementById('candlelight-overlay');
+
+            const lightsBtn = document.getElementById('lights-btn');
+            const musicBtn = document.getElementById('music-btn');
+            const startBtn = document.getElementById('start-btn');
+            const burnCandleBtn = document.getElementById('burn-candle-btn');
+            const cutCakeBtn = document.getElementById('cut-cake-btn');
+
+            const candle = document.getElementById('candle');
+            const flameContainer = document.getElementById('flame-container');
+            const smokeContainer = document.getElementById('smoke-container');
+            const portraitCandleGlow = document.getElementById('portrait-candle-glow');
+            const knifeSlash = document.getElementById('knife-slash');
+            const originalCake = document.getElementById('original-cake');
+            const cakePiece = document.getElementById('cake-piece');
+
+            const birthdayHeading = document.getElementById('birthday-heading');
+            const messageContainer = document.getElementById('message-container');
+            const messageParts = document.querySelectorAll('.message-part');
+
+            const backgroundMusic = document.getElementById('background-music');
+            const birthdayMusic = document.getElementById('birthday-music');
+            const audioPill = document.getElementById('audio-pill');
+            const audioTrackLabel = document.getElementById('audio-track-label');
+
+            let activeAudio = backgroundMusic;
+            let isMusicPlaying = false;
+
+            // ==========================================================================
+            // AUDIO MANAGER
+            // ==========================================================================
+            function updateAudioUI(isPlaying, title) {
+                isMusicPlaying = isPlaying;
+                if (isPlaying) {
+                    audioPill.classList.remove('paused');
+                    audioTrackLabel.textContent = title || "Playing Melody";
+                } else {
+                    audioPill.classList.add('paused');
+                    audioTrackLabel.textContent = "Music Paused";
+                }
+            }
+
+            function playAudioTrack(track, title) {
+                if (activeAudio && activeAudio !== track) {
+                    activeAudio.pause();
+                }
+                activeAudio = track;
+                track.play().then(() => {
+                    updateAudioUI(true, title);
+                }).catch(err => {
+                    console.log("Audio autoplay prevented by browser policy:", err);
+                    updateAudioUI(false, "Click To Play");
+                });
+            }
+
+            audioPill.addEventListener('click', function () {
+                if (!activeAudio) return;
+                if (activeAudio.paused) {
+                    activeAudio.play().then(() => {
+                        updateAudioUI(true, activeAudio === birthdayMusic ? "Birthday Song" : "Romantic Tune");
+                    }).catch(console.error);
+                } else {
+                    activeAudio.pause();
+                    updateAudioUI(false);
+                }
+            });
+
+            // ==========================================================================
+            // REALISTIC PETALS & AMBIENT STAR EMBERS (Canvas Animation)
+            // ==========================================================================
+            const petalsCanvas = document.getElementById('petals-canvas');
+            const petalsCtx = petalsCanvas.getContext('2d');
+
+            function resizePetalsCanvas() {
+                petalsCanvas.width = window.innerWidth;
+                petalsCanvas.height = window.innerHeight;
+            }
+            resizePetalsCanvas();
+            window.addEventListener('resize', resizePetalsCanvas);
+
+            class RosePetal {
+                constructor() {
+                    this.reset(true);
+                }
+
+                reset(initial) {
+                    this.x = Math.random() * petalsCanvas.width;
+                    this.y = initial ? Math.random() * petalsCanvas.height : -30;
+                    this.size = Math.random() * 14 + 10;
+                    this.speedY = Math.random() * 1.2 + 0.6;
+                    this.speedX = Math.random() * 1 - 0.5;
+                    this.rot = Math.random() * Math.PI * 2;
+                    this.rotSpeed = (Math.random() - 0.5) * 0.03;
+                    this.flip = Math.random() * Math.PI;
+                    this.flipSpeed = Math.random() * 0.04 + 0.01;
+                    this.color = Math.random() > 0.4 ? '#b3103f' : (Math.random() > 0.5 ? '#d91e52' : '#ff4d79');
+                    this.opacity = Math.random() * 0.4 + 0.4;
+                }
+
+                update() {
+                    this.y += this.speedY;
+                    this.x += Math.sin(this.y * 0.008) * 0.8 + this.speedX;
+                    this.rot += this.rotSpeed;
+                    this.flip += this.flipSpeed;
+
+                    if (this.y > petalsCanvas.height + 40) {
+                        this.reset(false);
+                    }
+                }
+
+                draw(ctx) {
+                    ctx.save();
+                    ctx.translate(this.x, this.y);
+                    ctx.rotate(this.rot);
+                    ctx.scale(Math.cos(this.flip), 1);
+                    ctx.globalAlpha = this.opacity;
+
+                    ctx.beginPath();
+                    ctx.moveTo(0, 0);
+                    ctx.bezierCurveTo(this.size / 2, -this.size / 2, this.size, 0, 0, this.size);
+                    ctx.bezierCurveTo(-this.size, 0, -this.size / 2, -this.size / 2, 0, 0);
+                    ctx.fillStyle = this.color;
+                    ctx.fill();
+
+                    // Delicate petal vein highlight
+                    ctx.beginPath();
+                    ctx.moveTo(0, 0);
+                    ctx.lineTo(0, this.size * 0.7);
+                    ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+
+                    ctx.restore();
+                }
+            }
+
+            const petals = [];
+            const petalCount = window.innerWidth < 600 ? 18 : 36;
+            for (let i = 0; i < petalCount; i++) {
+                petals.push(new RosePetal());
+            }
+
+            function animatePetals() {
+                petalsCtx.clearRect(0, 0, petalsCanvas.width, petalsCanvas.height);
+                for (let i = 0; i < petals.length; i++) {
+                    petals[i].update();
+                    petals[i].draw(petalsCtx);
+                }
+                requestAnimationFrame(animatePetals);
+            }
+            animatePetals();
+
+            // ==========================================================================
+            // FAIRY LIGHTS CURTAIN BUILDER
+            // ==========================================================================
+            function buildFairyLights() {
+                fairyCurtain.innerHTML = '';
+                const strands = Math.floor(window.innerWidth / 70);
+                const colors = ['#ffd700', '#ff3366', '#ffaa33', '#ff66b2', '#00f0ff'];
+
+                for (let i = 0; i < strands; i++) {
+                    const strand = document.createElement('div');
+                    strand.classList.add('fairy-strand');
+                    const wireHeight = Math.random() * 50 + 25;
+                    const color = colors[i % colors.length];
+
+                    strand.innerHTML = `
+                        <div class="fairy-wire" style="height: ${wireHeight}px;"></div>
+                        <div class="fairy-bulb" style="box-shadow: 0 0 15px ${color}, 0 0 30px ${color}; animation-delay: ${Math.random() * 2}s;"></div>
+                    `;
+                    fairyCurtain.appendChild(strand);
+                }
+            }
+            buildFairyLights();
+            window.addEventListener('resize', buildFairyLights);
+
+            // ==========================================================================
+            // INTRO FLOW INTERACTIONS
+            // ==========================================================================
+            // Step 1: Turn On Lights
+            lightsBtn.addEventListener('click', function () {
+                fairyCurtain.style.opacity = '1';
+                introBg.classList.add('reveal');
+
+                gsap.to(introTitle, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.2,
+                    ease: "power3.out"
+                });
+
+                gsap.to(introSub, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.4,
+                    delay: 0.3,
+                    ease: "power3.out"
+                });
+
+                gsap.to(lightsBtn, {
+                    opacity: 0,
+                    scale: 0.8,
+                    duration: 0.4,
+                    onComplete: function () {
+                        lightsBtn.style.display = 'none';
+                        musicBtn.style.display = 'inline-flex';
+                        gsap.fromTo(musicBtn,
+                            { opacity: 0, y: 15, scale: 0.9 },
+                            { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: "back.out(1.5)" }
+                        );
+                    }
+                });
+            });
+
+            // Step 2: Play Romantic Music
+            musicBtn.addEventListener('click', function () {
+                playAudioTrack(backgroundMusic, "Romantic Melody");
+
+                gsap.to(musicBtn, {
+                    opacity: 0,
+                    scale: 0.8,
+                    duration: 0.4,
+                    onComplete: function () {
+                        musicBtn.style.display = 'none';
+                        startBtn.style.display = 'inline-flex';
+                        gsap.fromTo(startBtn,
+                            { opacity: 0, y: 15, scale: 0.9 },
+                            { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: "back.out(1.5)" }
+                        );
+                    }
+                });
+            });
+
+            // Step 3: Let's Get Started -> Transition to Celebration Screen
+            startBtn.addEventListener('click', function () {
+                gsap.to(introScreen, {
+                    opacity: 0,
+                    duration: 1.2,
+                    ease: "power2.inOut",
+                    onComplete: function () {
+                        introScreen.style.display = 'none';
+                        celebrationScreen.style.display = 'flex';
+
+                        gsap.fromTo(celebrationScreen,
+                            { opacity: 0 },
+                            { opacity: 1, duration: 1.4 }
+                        );
+
+                        // Reveal Charu Portrait
+                        gsap.fromTo('#portrait-card',
+                            { opacity: 0, scale: 0.85, y: 30 },
+                            { opacity: 1, scale: 1, y: 0, duration: 1.4, ease: "back.out(1.4)", delay: 0.2 }
+                        );
+
+                        // Reveal Cake
+                        gsap.fromTo('.cake-stage',
+                            { opacity: 0, scale: 0.88, y: 30 },
+                            { opacity: 1, scale: 1, y: 0, duration: 1.4, ease: "back.out(1.4)", delay: 0.4 }
+                        );
+
+                        createCelebrationBalloons();
+                    }
+                });
+            });
+
+            // ==========================================================================
+            // CANDLE & CAKE CUTTING INTERACTIONS
+            // ==========================================================================
+            // Step 4: Light the Candle
+            burnCandleBtn.addEventListener('click', function () {
+                candle.style.display = 'block';
+
+                setTimeout(() => {
+                    flameContainer.classList.add('lit');
+                    candlelightOverlay.classList.add('burning');
+                    portraitCandleGlow.classList.add('active');
+
+                    // Smooth transition to Cut Cake Button
+                    gsap.to(burnCandleBtn, {
+                        opacity: 0,
+                        duration: 0.4,
+                        onComplete: function () {
+                            burnCandleBtn.style.display = 'none';
+                            cutCakeBtn.style.display = 'inline-flex';
+                            gsap.fromTo(cutCakeBtn,
+                                { opacity: 0, y: 15, scale: 0.9 },
+                                { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: "back.out(1.5)" }
+                            );
+                        }
+                    });
+                }, 200);
+            });
+
+            // Step 5: Realistic Cake Cut & Extinguish
+            cutCakeBtn.addEventListener('click', function () {
+                // Golden knife slash sweep
+                gsap.fromTo(knifeSlash,
+                    { opacity: 1, scaleY: 0 },
+                    {
+                        scaleY: 1,
+                        duration: 0.5,
+                        ease: "power3.in",
+                        onComplete: function () {
+                            gsap.to(knifeSlash, { opacity: 0, duration: 0.3 });
+                        }
+                    }
+                );
+
+                // Extinguish flame with smoke puff
+                gsap.to(flameContainer, {
+                    opacity: 0,
+                    scale: 0.3,
+                    duration: 0.4,
+                    onComplete: function () {
+                        flameContainer.classList.remove('lit');
+                        createRealisticSmoke();
+                    }
+                });
+
+                // Morph cake to cut piece
+                gsap.to(originalCake, {
+                    opacity: 0,
+                    scale: 0.85,
+                    duration: 0.8,
+                    delay: 0.3,
+                    onComplete: function () {
+                        originalCake.style.display = 'none';
+                        cakePiece.style.display = 'block';
+
+                        gsap.fromTo(cakePiece,
+                            { opacity: 0, scale: 0.85 },
+                            { opacity: 1, scale: 1, duration: 1.2, ease: "back.out(1.6)" }
+                        );
+                    }
+                });
+
+                // Hide cut cake button
+                gsap.to(cutCakeBtn, {
+                    opacity: 0,
+                    scale: 0.8,
+                    duration: 0.5,
+                    onComplete: function () {
+                        cutCakeBtn.style.display = 'none';
+                    }
+                });
+
+                // Start Grand Celebration Climax
+                setTimeout(startGrandCelebration, 800);
+            });
+
+            // Realistic Multi-Strand Smoke Particle Generator
+            function createRealisticSmoke() {
+                smokeContainer.style.opacity = '1';
+                smokeContainer.innerHTML = '';
+
+                for (let i = 0; i < 12; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('smoke-particle');
+                    const size = Math.random() * 14 + 8;
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    particle.style.left = `${Math.random() * 16 - 8}px`;
+                    particle.style.top = '0px';
+
+                    smokeContainer.appendChild(particle);
+
+                    const driftX = (Math.random() - 0.5) * 45;
+                    const driftY = -(Math.random() * 70 + 40);
+
+                    gsap.to(particle, {
+                        x: driftX,
+                        y: driftY,
+                        opacity: 0,
+                        scale: Math.random() * 2.5 + 1.5,
+                        duration: Math.random() * 1.5 + 1,
+                        ease: "power1.out",
+                        onComplete: () => particle.remove()
+                    });
+                }
+            }
+
+            // ==========================================================================
+            // GRAND CELEBRATION CLIMAX
+            // ==========================================================================
+            function startGrandCelebration() {
+                // Switch to Birthday Celebration Song
+                playAudioTrack(birthdayMusic, "Happy Birthday Saruu ❤️");
+
+                // Animate Birthday Heading
+                birthdayHeading.style.display = 'block';
+                gsap.fromTo(birthdayHeading,
+                    { opacity: 0, y: -30, scale: 0.9 },
+                    { opacity: 1, y: 0, scale: 1, duration: 1.2, ease: "back.out(1.6)" }
+                );
+
+                // Reveal Love Letters
+                setTimeout(() => {
+                    messageContainer.style.display = 'block';
+                    gsap.fromTo(messageContainer,
+                        { opacity: 0, y: 40, scale: 0.92 },
+                        { opacity: 1, y: 0, scale: 1, duration: 1.4, ease: "power3.out" }
+                    );
+
+                    // Sequential Letter Reveals
+                    messageParts.forEach((part, index) => {
+                        setTimeout(() => {
+                            part.classList.add('show');
+                        }, (index + 1) * 900);
+                    });
+                }, 800);
+
+                // Start Fireworks Display
+                startFireworksDisplay();
+            }
+
+            // ==========================================================================
+            // REALISTIC CANVAS FIREWORKS SYSTEM (with gravity, friction & color bursts)
+            // ==========================================================================
+            const fireworksCanvas = document.getElementById('fireworks-canvas');
+            const fwCtx = fireworksCanvas.getContext('2d');
+
+            function resizeFireworksCanvas() {
+                fireworksCanvas.width = window.innerWidth;
+                fireworksCanvas.height = window.innerHeight;
+            }
+            resizeFireworksCanvas();
+            window.addEventListener('resize', resizeFireworksCanvas);
+
+            class FireworkParticle {
+                constructor(x, y, color) {
+                    this.x = x;
+                    this.y = y;
+                    this.color = color;
+                    this.radius = Math.random() * 2.2 + 1.2;
+                    this.angle = Math.random() * Math.PI * 2;
+                    this.speed = Math.random() * 7 + 2;
+                    this.vx = Math.cos(this.angle) * this.speed;
+                    this.vy = Math.sin(this.angle) * this.speed;
+                    this.gravity = 0.055;
+                    this.friction = 0.97;
+                    this.alpha = 1;
+                    this.decay = Math.random() * 0.015 + 0.01;
+                    this.trail = [];
+                }
+
+                update() {
+                    this.trail.push({ x: this.x, y: this.y, alpha: this.alpha });
+                    if (this.trail.length > 5) this.trail.shift();
+
+                    this.vx *= this.friction;
+                    this.vy *= this.friction;
+                    this.vy += this.gravity;
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    this.alpha -= this.decay;
+                }
+
+                draw(ctx) {
+                    // Trail
+                    for (let i = 0; i < this.trail.length; i++) {
+                        ctx.beginPath();
+                        ctx.arc(this.trail[i].x, this.trail[i].y, this.radius * (i / this.trail.length), 0, Math.PI * 2);
+                        ctx.fillStyle = this.color;
+                        ctx.globalAlpha = this.trail[i].alpha * 0.35;
+                        ctx.fill();
+                    }
+
+                    // Main spark
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = this.color;
+                    ctx.globalAlpha = Math.max(0, this.alpha);
+                    ctx.fill();
+                }
+            }
+
+            let fwParticles = [];
+            let fireworksRunning = false;
+
+            function triggerFireworkBurst(x, y) {
+                const palettes = [
+                    ['#ffd700', '#ff8c00', '#ffffff', '#ffaa33'],
+                    ['#ff3366', '#ff758c', '#ffffff', '#ff2a5f'],
+                    ['#00f0ff', '#7000ff', '#ffffff', '#00bfff'],
+                    ['#ffc0cb', '#ffd700', '#ff3366', '#ffffff']
+                ];
+                const selectedPalette = palettes[Math.floor(Math.random() * palettes.length)];
+                const count = window.innerWidth < 600 ? 55 : 95;
+
+                for (let i = 0; i < count; i++) {
+                    const color = selectedPalette[Math.floor(Math.random() * selectedPalette.length)];
+                    fwParticles.push(new FireworkParticle(x, y, color));
+                }
+            }
+
+            function animateFireworks() {
+                if (!fireworksRunning) return;
+                fwCtx.clearRect(0, 0, fireworksCanvas.width, fireworksCanvas.height);
+
+                for (let i = fwParticles.length - 1; i >= 0; i--) {
+                    fwParticles[i].update();
+                    fwParticles[i].draw(fwCtx);
+                    if (fwParticles[i].alpha <= 0) {
+                        fwParticles.splice(i, 1);
+                    }
+                }
+
+                requestAnimationFrame(animateFireworks);
+            }
+
+            function startFireworksDisplay() {
+                fireworksCanvas.style.display = 'block';
+                fireworksRunning = true;
+                animateFireworks();
+
+                // Initial flurry
+                for (let i = 0; i < 8; i++) {
+                    setTimeout(() => {
+                        const x = Math.random() * (fireworksCanvas.width * 0.8) + (fireworksCanvas.width * 0.1);
+                        const y = Math.random() * (fireworksCanvas.height * 0.45) + 50;
+                        triggerFireworkBurst(x, y);
+                    }, i * 320);
+                }
+
+                // Ongoing celebration bursts for 35 seconds
+                const interval = setInterval(() => {
+                    const x = Math.random() * (fireworksCanvas.width * 0.8) + (fireworksCanvas.width * 0.1);
+                    const y = Math.random() * (fireworksCanvas.height * 0.45) + 60;
+                    triggerFireworkBurst(x, y);
+                }, 1200);
+
+                setTimeout(() => clearInterval(interval), 35000);
+            }
+
+            // Click anywhere to spawn celebratory fireworks
+            celebrationScreen.addEventListener('click', function (e) {
+                // Don't trigger if clicked on buttons or interactive cards
+                if (e.target.closest('button') || e.target.closest('#message-container') || e.target.closest('.audio-pill')) return;
+                triggerFireworkBurst(e.clientX, e.clientY);
+            });
+
+            // ==========================================================================
+            // CELEBRATION BALLOONS & HEARTS
+            // ==========================================================================
+            function createCelebrationBalloons() {
+                const balloonImages = ['b1.png', 'b2.png', 'b3.png', 'b4.png', 'b5.png', 'b6.png', 'b7.png'];
+                const count = window.innerWidth < 600 ? 10 : 20;
+
+                for (let i = 0; i < count; i++) {
+                    const balloon = document.createElement('img');
+                    balloon.classList.add('celebration-element');
+                    balloon.src = balloonImages[i % balloonImages.length];
+                    const size = Math.random() * 30 + 45;
+                    balloon.style.width = `${size}px`;
+                    balloon.style.left = `${Math.random() * 92}vw`;
+                    balloon.style.animationDuration = `${Math.random() * 6 + 10}s`;
+                    balloon.style.animationDelay = `${Math.random() * 6}s`;
+
+                    celebrationScreen.appendChild(balloon);
+                }
+            }
+
+            // ==========================================================================
+            // CHARU'S MEMORY CAROUSEL MODAL (7 PHOTOS)
+            // ==========================================================================
+            const galleryModal = document.getElementById('gallery-modal');
+            const openGalleryBtn = document.getElementById('open-gallery-btn');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+            const modalImg = document.getElementById('modal-img');
+            const modalCaption = document.getElementById('modal-caption');
+            const galleryCounter = document.getElementById('gallery-counter');
+            const prevImgBtn = document.getElementById('prev-img-btn');
+            const nextImgBtn = document.getElementById('next-img-btn');
+
+            const photos = [
+                { src: 'charu1.jpg', caption: 'That radiant smile that lights up my entire world.' },
+                { src: 'charu2.jpg', caption: 'A quiet grace and beauty that steals my breath away.' },
+                { src: 'charu3.jpg', caption: 'Your eyes hold an entire universe of calmness and magic.' },
+                { src: 'charu4.jpg', caption: 'The effortless elegance and mystery I fall for every day.' },
+                { src: 'charu5.jpg', caption: 'My Heroin, my peace, and my sweetest addiction.' },
+                { src: 'charu6.jpg', caption: 'Every glimpse of you feels like poetry written in real life.' },
+                { src: 'charu7.jpg', caption: 'Forever my Queen, irreplaceable and unforgettable.' }
+            ];
+
+            let currentPhotoIndex = 0;
+
+            function updateGallery(index) {
+                currentPhotoIndex = (index + photos.length) % photos.length;
+                modalImg.src = photos[currentPhotoIndex].src;
+                modalCaption.textContent = photos[currentPhotoIndex].caption;
+                galleryCounter.textContent = `${currentPhotoIndex + 1} / ${photos.length}`;
+            }
+
+            openGalleryBtn.addEventListener('click', () => {
+                galleryModal.classList.add('open');
+                updateGallery(0);
+            });
+
+            document.getElementById('portrait-card').addEventListener('click', () => {
+                galleryModal.classList.add('open');
+                updateGallery(4); // Starts on charu5.jpg (main portrait)
+            });
+
+            modalCloseBtn.addEventListener('click', () => {
+                galleryModal.classList.remove('open');
+            });
+
+            galleryModal.addEventListener('click', (e) => {
+                if (e.target === galleryModal) galleryModal.classList.remove('open');
+            });
+
+            prevImgBtn.addEventListener('click', () => updateGallery(currentPhotoIndex - 1));
+            nextImgBtn.addEventListener('click', () => updateGallery(currentPhotoIndex + 1));
+
+            // ==========================================================================
+            // 3D TILT EFFECT ON MAIN PORTRAIT
+            // ==========================================================================
+            const portraitCard = document.getElementById('portrait-card');
+            portraitCard.addEventListener('mousemove', function (e) {
+                const rect = portraitCard.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                const rotX = -(y / rect.height) * 16;
+                const rotY = (x / rect.width) * 16;
+                portraitCard.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(1.03, 1.03, 1.03)`;
+            });
+
+            portraitCard.addEventListener('mouseleave', function () {
+                portraitCard.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+            });
+        });
+    </script>
+</body>
+</html>
